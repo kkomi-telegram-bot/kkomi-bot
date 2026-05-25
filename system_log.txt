@@ -1,0 +1,8 @@
+2026-05-25 12:01:06,586 - INFO - Connecting to 149.154.167.51:443/TcpFull...
+2026-05-25 12:01:06,587 - WARNING - Attempt 1 at connecting failed: ConnectionRefusedError: [Errno 111] Connect call failed ('149.154.167.51', 443)
+2026-05-25 12:01:07,589 - WARNING - Attempt 2 at connecting failed: ConnectionRefusedError: [Errno 111] Connect call failed ('149.154.167.51', 443)
+2026-05-25 12:01:08,591 - WARNING - Attempt 3 at connecting failed: ConnectionRefusedError: [Errno 111] Connect call failed ('149.154.167.51', 443)
+2026-05-25 12:01:09,593 - WARNING - Attempt 4 at connecting failed: ConnectionRefusedError: [Errno 111] Connect call failed ('149.154.167.51', 443)
+2026-05-25 12:01:10,595 - WARNING - Attempt 5 at connecting failed: ConnectionRefusedError: [Errno 111] Connect call failed ('149.154.167.51', 443)
+2026-05-25 12:01:11,597 - WARNING - Attempt 6 at connecting failed: ConnectionRefusedError: [Errno 111] Connect call failed ('149.154.167.51', 443)
+2026-05-25 12:01:12,599 - ERROR - 치명적 오류: Connection to Telegram failed 5 time(s)
