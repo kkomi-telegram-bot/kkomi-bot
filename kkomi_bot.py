@@ -140,7 +140,7 @@ def safe_idx(s, sep='_'):
 
 async def safe_edit(event, text, buttons=None):
     try:
-        await event.edit(text, buttons=buttons)
+        await event.edit(text, buttons=buttons, parse_mode='md')
     except MessageNotModifiedError:
         pass
     except Exception as e:
@@ -154,7 +154,7 @@ async def draw_main(event, edit=False):
     accs = db.get('accounts', [])
     running = sum(1 for a in accs if a.get('running'))
     text = (
-        f"🎀 **꽃미네 홍보센터 V24** 🎀\n"
+        f"🎀 **꼼이네 홍보센터 V24** 🎀\n"
         f"━━━━━━━━━━━━━━━━━━━━\n"
         f"**등록 계정**: {len(accs)}개 | **가동 중**: {running}개\n"
         f"━━━━━━━━━━━━━━━━━━━━\n"
@@ -170,7 +170,7 @@ async def draw_main(event, edit=False):
     if edit:
         await safe_edit(event, text, btns)
     else:
-        await event.respond(text, buttons=btns)
+        await event.respond(text, buttons=btns, parse_mode='md')
 
 async def draw_accounts(event, page=0, edit=False):
     db = DB.load()
@@ -202,7 +202,7 @@ async def draw_accounts(event, page=0, edit=False):
     if edit:
         await safe_edit(event, text, btns)
     else:
-        await event.respond(text, buttons=btns)
+        await event.respond(text, buttons=btns, parse_mode='md')
 
 async def draw_acc_menu(event, idx, edit=False):
     acc = DB.get_account(idx)
@@ -238,7 +238,7 @@ async def draw_acc_menu(event, idx, edit=False):
     if edit:
         await safe_edit(event, text, btns)
     else:
-        await event.respond(text, buttons=btns)
+        await event.respond(text, buttons=btns, parse_mode='md')
 
 async def draw_links(event, acc_idx, page=0, edit=False):
     acc = DB.get_account(acc_idx)
@@ -270,7 +270,7 @@ async def draw_links(event, acc_idx, page=0, edit=False):
     if edit:
         await safe_edit(event, text, btns)
     else:
-        await event.respond(text, buttons=btns)
+        await event.respond(text, buttons=btns, parse_mode='md')
 
 async def draw_admin_menu(event, edit=False):
     db = DB.load()
@@ -292,7 +292,7 @@ async def draw_admin_menu(event, edit=False):
     if edit:
         await safe_edit(event, text, btns)
     else:
-        await event.respond(text, buttons=btns)
+        await event.respond(text, buttons=btns, parse_mode='md')
 
 async def draw_log(event, page=0, edit=False):
     try:
@@ -322,7 +322,7 @@ async def draw_log(event, page=0, edit=False):
     if edit:
         await safe_edit(event, text, btns)
     else:
-        await event.respond(text, buttons=btns)
+        await event.respond(text, buttons=btns, parse_mode='md')
 
 # =======================================================
 # 방송
@@ -783,7 +783,7 @@ async def main():
     db = DB.load()
     db['bot_session_str'] = client.session.save()
     DB.save(db)
-    logger.info("🐾 꽃미네 봇 V24 Final 가동")
+    logger.info("🐾 꼼이네 봇 V24 Final 가동")
     for i, acc in enumerate(db.get('accounts', [])):
         if acc.get('running'):
             ensure_scheduler(i)
