@@ -26,8 +26,7 @@ API_HASH   = '6ba32569c9e7a8bb1317ddd2c5a1e556'
 BOT_TOKEN  = "8645010603:AAEZOQj-dJQn5KarAPxCHf_2NGOGxQrgSYI"
 SUPER_ADMINS = [8400579076]
 
-BASE_DIR    = '/app/'
-DATA_FILE   = os.path.join(BASE_DIR, 'kkomi_v24_db.json')
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))DATA_FILE   = os.path.join(BASE_DIR, 'kkomi_v24_db.json')
 LOG_FILE    = os.path.join(BASE_DIR, 'system_log.txt')
 MEDIA_DIR   = os.path.join(BASE_DIR, 'ad_media')
 
